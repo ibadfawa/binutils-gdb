@@ -14,7 +14,7 @@ jobs:
     steps:
     - uses: actions/checkout@v4
     - name: pkg install
-      run: sudo apt-get install tree make gcc build-essential python3
+      run: sudo apt-get install tree make gcc build-essential python3  libmpc-dev
     - name: configure
       run: ./configure --target=arm-linux-gnueabi --with-gmp  --with-mpfr
     - name: make
