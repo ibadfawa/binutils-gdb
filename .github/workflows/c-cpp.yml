@@ -1,0 +1,28 @@
+name: C/C++ CI
+
+on:
+  push:
+    branches: [ "master" ]
+  pull_request:
+    branches: [ "master" ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v4
+    - name: pkg install
+      run: apt-get install tree make gcc build-essential python3
+    - name: configure
+      run: ./configure --target=arm-linux-gnueabi
+    - name: make
+      run: make
+    - name: tree
+      run: tree ${pwd}
+    - name: Ls
+      run: ls
+    - name: pwd
+      run: pwd
+      
