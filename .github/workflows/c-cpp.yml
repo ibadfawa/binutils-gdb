@@ -16,7 +16,7 @@ jobs:
     - name: pkg install
       run: sudo apt-get install tree make gcc build-essential python3
     - name: configure
-      run: ./configure --target=arm-linux-gnueabi
+      run: ./configure --target=arm-linux-gnueabi --with-gmp 
     - name: make
       run: make
     - name: tree
